@@ -1,0 +1,14 @@
+git clone
+create a virtual environment
+ 
+python -m venv ll_env
+
+activate environment
+
+ll_env\Scripts\activate
+
+pip install django==2.1
+
+pip install djangorestframework
+
+open project in pycharm
