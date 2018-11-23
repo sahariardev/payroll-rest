@@ -13,3 +13,14 @@ db.sqlite3
 /payroll/
 /payroll
 payroll/
+include/
+/include/
+include
+
+lib
+lib/
+/lib
+/Scripts/
+/Scripts
+Scripts
+pyenv.cfg
