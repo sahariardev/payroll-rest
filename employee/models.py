@@ -35,3 +35,14 @@ class Employee(models.Model):
     def __str__(self):
         return self.name
 
+
+#model bonus
+class Bonus(models.Model):
+    description = models.TextField(null=False)
+    amount = models.IntegerField()
+    activation_date = models.DateField()
+    package = models.ForeignKey(Package,on_delete=models.CASCADE,null=True)
+
+
+
+
