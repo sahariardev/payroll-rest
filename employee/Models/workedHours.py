@@ -6,4 +6,9 @@ class WorkedHours(models.Model):
     hours=models.IntegerField(null=False)
     rate=models.IntegerField(null=False)
     currency=models.CharField()
-    
+
+
+
+    def __str__(self):
+        return self.employee.name+" "+self.hours+" "+self.rate
+
