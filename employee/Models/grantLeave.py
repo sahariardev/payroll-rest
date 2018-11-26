@@ -5,3 +5,7 @@ class GrantLeave(models.Model):
     employee=models.ForeignKey(Employee,on_delete=models.CASCADE)
     date=models.DateField(null=False)
     extra=models.TextField(null=True)
+
+
+    def __str__(self):
+        return self.employee.name+" "+self.date
