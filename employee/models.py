@@ -42,6 +42,9 @@ class Bonus(models.Model):
     amount = models.IntegerField()
     activation_date = models.DateField()
     package = models.ForeignKey(Package,on_delete=models.CASCADE,null=True)
+    def __str__(self):
+        return self.description
+
 
 
 
