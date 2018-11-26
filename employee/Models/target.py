@@ -6,3 +6,4 @@ class Target(models.Model):
     description=models.TextField(null=False)
     points=models.TextField(null=False)
     status=models.CharField(null=False)
+
