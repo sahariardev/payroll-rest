@@ -4,7 +4,7 @@ from ..models import Employee
 class Payment(models.Model):
     employee=models.ForeignKey(Employee,on_delete=models.CASCADE)
     amount=models.IntegerField(null=False)
-    amount_type=models.CharField(null=False)
+    amount_type=models.CharField(null=False,max_length=10)
     date=models.DateField()
 
 

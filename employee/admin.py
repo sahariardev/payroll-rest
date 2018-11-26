@@ -17,5 +17,5 @@ admin.site.register(Bonus)
 admin.site.register(GrantLeave)
 admin.site.register(Payment)
 admin.site.register(Target)
-admin.sites.register(WorkedHours)
+admin.site.register(WorkedHours)
 
