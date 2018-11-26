@@ -8,3 +8,7 @@ class GrantLeave(models.Model):
     to_date=models.DateField(null=False)
     cause = models.TextField(null=False)
     extra=models.TextField(null=True)
+
+
+    def __str__(self):
+        return self.employee.name+" "+self.date
