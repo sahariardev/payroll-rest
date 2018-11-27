@@ -1,10 +1,10 @@
 from django.db import models
 
-from employee.Models import employee
+from employee.Models import Employee
 
 
 class GrantLeave(models.Model):
-    employee = models.ForeignKey(employee, on_delete=models.CASCADE)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     duration = models.IntegerField(null=False)
     from_date = models.DateField(null=False)
     to_date = models.DateField(null=False)

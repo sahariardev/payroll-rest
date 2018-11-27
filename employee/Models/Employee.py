@@ -1,9 +1,10 @@
 from django.db import models
 
-from employee.Models import type, package
+from employee.Models import Type, Package
 
 
 class Employee(models.Model):
+    type = models.ForeignKey(Type, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=30, null=False)
     address = models.TextField(null=False)
     n_id = models.CharField(max_length=50, null=False, default=11111)
@@ -11,8 +12,7 @@ class Employee(models.Model):
     email = models.EmailField(max_length=254,null=False)
     day_choices = tuple([tuple([i, i]) for i in range(32)])
     pay_day = models.IntegerField(choices=day_choices, default=1)
-    type = models.ForeignKey(type, on_delete=models.CASCADE, null=True)
-    package = models.ForeignKey(package, on_delete=models.CASCADE, null=True)
+    package = models.ForeignKey(Package, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name + "--" + self.email + "--" + self.package.name + "--" + self.type.name

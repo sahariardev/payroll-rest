@@ -1,10 +1,10 @@
 from django.db import models
 
-from employee.Models import employee
+from employee.Models import Employee
 
 
 class Attendance(models.Model):
-    employee = models.ForeignKey(employee, on_delete=models.CASCADE)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     date = models.DateField()
     arrival_time = models.TimeField()
     departure_time = models.TimeField()

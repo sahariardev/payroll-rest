@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from employee.Models import employee, bonus, attendance, grantLeave, package, type
+from employee.Models import Package, Type, Employee, Attendance, Bonus, GrantLeave
 
 # Register your models here.
-admin.site.register(package)  # Salary Package
-admin.site.register(type)   # Employee Type
-admin.site.register(employee)   # Employee Entity
-admin.site.register(attendance)
-admin.site.register(bonus)
-admin.site.register(grantLeave)
+admin.site.register(Package)  # Salary Package
+admin.site.register(Type)   # Employee Type
+admin.site.register(Employee)   # Employee Entity
+admin.site.register(Attendance)
+admin.site.register(Bonus)
+admin.site.register(GrantLeave)

@@ -1,6 +1,6 @@
 from django.db import models
 
-from employee.Models.employee import Employee
+from employee.Models.Employee import Employee
 
 
 class WorkedHours(models.Model):
