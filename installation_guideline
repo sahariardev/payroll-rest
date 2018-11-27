@@ -1,24 +1,47 @@
-clone the project using git clone
-do not change the folder in the terminal
-create a virtual environment using following command
+# clone the project (do not change the folder in the terminal)
+
+
+# create a virtual environment using following command
+
+Windows:
 python -m venv payroll-rest
 
-activate the virtual environment
+Linux:
+virtualenv payroll-rest
+
+
+# activate the virtual environment
+
+Windows:
 payroll-rest\Scripts\activate
 
-now install dependencies
-pip install django
-pip install djangorestframework
-now enter into the project folder
+Linux:
+source payroll-rest/bin/activate
+
+
+# install dependencies using pip
+
+pip install -r requirements.txt
+
+
+# switch to the project folder
+
 cd payroll-rest
 
-now make migration
+
+# make migration
+
 python manage.py makemigrations
+
 python manage.py migrate
 
-create super user using following command
-python manage.py createsuperuser
 
-now run the server
+# create super user using following command
+
+python manage.py createsuperuser (enter username, email, password)
+
+
+# run the server
+
 python manage.py runserver
 
