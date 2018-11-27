@@ -1,6 +1,6 @@
 from django.db import models
 
-from employee.Models import Employee
+from .Employee import Employee
 
 
 class Payment(models.Model):
