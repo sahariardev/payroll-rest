@@ -1,8 +1,8 @@
 from django.db import models
-from ..models import Package
+from .Package import Package
 
 class Bonus(models.Model):
-    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+    package = models.ForeignKey(Package, on_delete=models.CASCADE,null=True)
     amount = models.IntegerField()
     month = models.DateField()
 
