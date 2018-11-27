@@ -12,4 +12,4 @@ class GrantLeave(models.Model):
     extra = models.TextField(null=True)
 
     def __str__(self):
-        return self.employee.name + "--" + self.duration + "--" + self.cause + "--" + self.extra
+        return self.employee.name + "--" + str(self.duration) + "--" + self.cause

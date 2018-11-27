@@ -10,4 +10,4 @@ class WorkedHours(models.Model):
     currency = models.CharField()
 
     def __str__(self):
-        return self.employee.name + "--" + self.hours + "--" + self.rate + "--" + self.currency
+        return self.employee.name + "--" + str(self.hours) + "--" + str(self.rate) + "--" + self.currency

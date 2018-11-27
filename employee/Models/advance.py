@@ -10,4 +10,4 @@ class Advance(models.Model):
     month = models.DateField()
 
     def __str__(self):
-        return self.employee.name + "--" + self.amount + "--" + self.received
+        return self.employee.name + "--" + str(self.amount) + "--" + str(self.received)

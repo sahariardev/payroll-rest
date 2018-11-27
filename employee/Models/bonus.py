@@ -10,4 +10,4 @@ class Bonus(models.Model):
     package = models.ForeignKey(package, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        return self.package + "--" + self.amount + "--" + self.activation_date
+        return self.package + "--" + str(self.amount) + "--" + str(self.activation_date)

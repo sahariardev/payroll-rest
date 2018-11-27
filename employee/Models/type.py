@@ -6,4 +6,4 @@ class Type(models.Model):
     description = models.TextField(null=False)
 
     def __str__(self):
-        return self.type
+        return self.type + "--" + self.description

@@ -10,4 +10,4 @@ class Package(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.name + "--" + self.salary + "--" + self.annual_leave + "--" + self.sick_leave
+        return self.name + "--" + str(self.salary) + "--" + str(self.annual_leave) + "--" + str(self.sick_leave)

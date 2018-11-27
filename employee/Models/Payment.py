@@ -10,4 +10,4 @@ class Payment(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return self.employee.name + " Date " + self.date + " Amount " + self.amount + "Amount Type " + self.amount_type
+        return self.employee.name + "--" + str(self.date) + "--" + str(self.amount) + "--" + self.amount_type

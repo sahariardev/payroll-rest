@@ -10,4 +10,4 @@ class Target(models.Model):
     status = models.CharField(null=False)
 
     def __str__(self):
-        return self.employee.name+"--"+self.points+"--"+self.status
+        return self.employee.name + "--" + self.points + "--" + self.status

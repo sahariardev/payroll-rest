@@ -11,4 +11,4 @@ class Attendance(models.Model):
 
     def __str__(self):
         return str(self.employee.name) + " Day :" + str(
-            self.date) + " Arrival Time :" + self.arrival_time + " Departure Time:" + self.departure_time
+            self.date) + " Arrival Time :" + str(self.arrival_time) + " Departure Time:" + str(self.departure_time)
