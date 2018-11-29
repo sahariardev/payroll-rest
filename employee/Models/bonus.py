@@ -6,3 +6,6 @@ class Bonus(models.Model):
     amount = models.IntegerField()
     month = models.DateField()
 
+    def __str__(self):
+        return self.package.name+" amount {}".format(self.amount)
+
