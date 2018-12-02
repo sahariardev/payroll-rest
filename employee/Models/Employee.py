@@ -8,8 +8,8 @@ class Employee(models.Model):
     date_of_joining=models.DateField(auto_now=True)
     #we do not want to delete any items from the db
     peckage=models.ForeignKey(Package,on_delete=models.SET_NULL)
-    gener_choices=(('M','Male'),('F','Female'));
-    gender=models.CharField(choices=gener_choices)
+    gender_choices=(('M','Male'),('F','Female'));
+    gender=models.CharField(choices=gender_choices)
     date_of_birth=models.DateField()
     blood_group=models.CharField(max_length=30)
     marital_choices=(('Single','Single'),('Married','Married'))
@@ -20,3 +20,5 @@ class Employee(models.Model):
     spouse_name=models.CharField(max_length=30)
     designation=models.ForeignKey(Designation, on_delete=models.SET_NULL)
 
+    def __str__(self):
+        return self.name
