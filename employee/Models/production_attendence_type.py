@@ -10,6 +10,5 @@ class ProductionAttendenceType(models.Model):
     type=models.CharField(choices=type_choices)
 
     def __str__(self):
-
         return self.name
 
