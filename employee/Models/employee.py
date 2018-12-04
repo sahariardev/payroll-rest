@@ -1,9 +1,10 @@
 from django.db import models
+from .package import Package
+from .designation import Designation
 
-from .Package import Package
-from .designation import  Designation
 
 class Employee(models.Model):
+
     name=models.CharField(max_length=30,blank=False)
     date_of_joining=models.DateField(auto_now=True)
     #we do not want to delete any items from the db
