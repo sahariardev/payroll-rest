@@ -7,7 +7,7 @@ class ProductionAttendenceType(models.Model):
         ('Production','Production')
         ('attendence/leave with pay', 'attendence/leave with pay')
         ('attendence/leave without pay', 'attendence/leave without pay')
-    );
+    )
     type=models.CharField(choices=type_choices)
 
     def __str__(self):
