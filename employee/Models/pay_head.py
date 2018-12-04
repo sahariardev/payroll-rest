@@ -29,6 +29,6 @@ class PayHead(models.Model):
     under = models.CharField(max_length=40,choices=under_types)
 
     def __str__(self):
-        return self.name
+        return self.description
 
 
