@@ -7,3 +7,6 @@ class SalaryDetail(models.Model):
     effective_till_date=models.DateField(blank=False)
     employee=models.ForeignKey(Employee, on_delete=models.SET_NULL)
 
+    def __str__(self):
+        return "Salary detail of "+self.employee.name
+
