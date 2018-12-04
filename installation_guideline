@@ -10,7 +10,7 @@ Linux:
 virtualenv payroll-rest
 
 
-# activate the virtual environment
+# activate the virtual environmentadmin.site.register(SalaryDetail)
 
 Windows:
 payroll-rest\Scripts\activate
