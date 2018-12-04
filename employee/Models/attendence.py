@@ -7,10 +7,10 @@ from .unit import Unit
 
 
 class Attendance(models.Model):
-    employee = models.ForeignKey(Employee, on_delete=models.SET_NULL,blank=False)
-    production_attendance_type=models.ForeignKey(ProductionAttendenceType,on_delete=models.SET_NULL,blank=False)
+    employee = models.ForeignKey(Employee,null=True, on_delete=models.SET_NULL,blank=False)
+    production_attendance_type=models.ForeignKey(ProductionAttendenceType, null=True, on_delete=models.SET_NULL,blank=False)
     value=models.FloatField(blank=False,null=False,default=0)
-    unit=models.ForeignKey(Unit, on_delete=models.SET_NULL)
+    unit=models.ForeignKey(Unit, on_delete=models.SET_NULL, null=True,)
 
     def __str__(self):
         return "Attendance of  "+self.employee.name
