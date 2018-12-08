@@ -1,13 +1,17 @@
 from django.db import models
-from ..models import Employee
+from .employee import Employee
+from .production_attendence_type import ProductionAttendenceType
+from .unit import Unit
 
-class Attendence(models.Model):
-    employee=models.ForeignKey(Employee,on_delete=models.CASCADE)
-    date=models.DateField()
-    arrival_time=models.TimeField()
-    departure_time=models.TimeField()
+'''Attendance or production'''
+
+
+class Attendance(models.Model):
+    employee = models.ForeignKey(Employee,null=True, on_delete=models.SET_NULL,blank=False)
+    production_attendance_type=models.ForeignKey(ProductionAttendenceType, null=True, on_delete=models.SET_NULL,blank=False)
+    value=models.FloatField(blank=False,null=False,default=0)
+    unit=models.ForeignKey(Unit, on_delete=models.SET_NULL, null=True,)
 
     def __str__(self):
-        return str(self.employee.name)+" Day :"+str(self.date)+" Arrival Time :"+self.arrival_time+" Departure Time:"+self.departure_time
-
+        return "Attendance of  "+self.employee.name
 
