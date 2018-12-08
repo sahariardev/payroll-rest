@@ -18,7 +18,7 @@ class Employee(models.Model):
     address=models.TextField()
     contact=models.CharField(max_length=15)
     email=models.CharField(max_length=30)
-    spouse_name=models.CharField(max_length=30)
+    spouse_name=models.CharField(max_length=30, blank=True)
     designation=models.ForeignKey(Designation, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
