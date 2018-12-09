@@ -1,7 +1,7 @@
 from rest_framework.generics import ListAPIView,CreateAPIView,UpdateAPIView,RetrieveAPIView
-from rest_framework import  renderers
+from rest_framework import renderers
 from ..Models.unit import Unit
-from ..Serializers.unit_serializer import UnitListSerializer,UnitDetailSerializer
+from ..Serializers.unit_serializer import UnitListSerializer,UnitDetailSerializer,UnitCreateSerializer
 
 
 class UnitListView(ListAPIView):
@@ -15,3 +15,10 @@ class UnitDetailView(RetrieveAPIView):
     serializer_class = UnitDetailSerializer
     lookup_field = 'pk'
     renderer_classes = [renderers.JSONRenderer]
+
+
+class UnitCreateView(CreateAPIView):
+    queryset = Unit.objects.all()
+    serializer_class = UnitCreateSerializer
+
+

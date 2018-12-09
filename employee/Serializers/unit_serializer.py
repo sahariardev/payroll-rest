@@ -5,15 +5,20 @@ from ..Models.unit import Unit
 class UnitListSerializer(ModelSerializer):
     class Meta:
         model=Unit
-        fields=['name','symbol'];
+        fields=['id','name','symbol'];
 
 
-'''This serializer will be used for detail, create and update'''
+'''This serializer will be used for detail and update'''
 
 
 class UnitDetailSerializer(ModelSerializer):
     class Meta:
         model=Unit
-        fields=['name','symbol','description'];
+        fields=['id','name','symbol','description'];
 
+
+class UnitCreateSerializer(ModelSerializer):
+    class Meta:
+        model=Unit
+        fields=['name','symbol','description'];
 
