@@ -22,3 +22,6 @@ class UnitCreateView(CreateAPIView):
     serializer_class = UnitCreateSerializer
 
 
+class UnitUpdateView(UpdateAPIView):
+    queryset = Unit.objects.all()
+    serializer_class = UnitDetailSerializer
