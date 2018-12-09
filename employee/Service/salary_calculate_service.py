@@ -1,11 +1,12 @@
 from ..Models.employee import Employee
+from ..Models.attendence import Attendance
 
 
 
 class SalaryCalculateService():
 
 
-    def  calculateSalaryForOneEmployee(self,employee):
+    def  calculateSalaryForOneEmployee(self,employee_id):
         '''basically calculates the emplyee earnings'''
         '''Check the employee type. If the type does not match with the Employee throw type mismatch exception'''
         '''find the activated salary details of the particular employee using date
@@ -22,8 +23,24 @@ class SalaryCalculateService():
            calculate the pay head amount           
            after calculating all pay head amount add them and find the net
         
+        
+           need 
         '''
-        return "";
+        print('----hello world-----')
+        attendences=Attendance.objects.filter(employee_id=employee_id).filter(date__gt='2018-12-09').filter(date__lte='2020-12-09')
+        print(attendences)
+
+        for attendence in attendences:
+            print(attendence.production_attendance_type.name)
+            print("{a} {b}".format(a=attendence.value,b=attendence.unit.name))
+            print("--------------------------------------------")
+
+        print('----hello world-----')
+
+
+
+
+        return ""
 
 
 

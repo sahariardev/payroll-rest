@@ -23,3 +23,6 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.name
+
+    def __get__packageName(self):
+        return self.peckage.name
