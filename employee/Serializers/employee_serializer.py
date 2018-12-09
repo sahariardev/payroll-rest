@@ -12,7 +12,7 @@ class EmployeeSerializer(ModelSerializer):
         #set the fields list
         fields=['name','address','id','date_of_joining','gender','date_of_birth','blood_group','marital_status','address','contact','email','spouse_name','designation','peckage']
 
-class EmployeeCreateSerializer(ModelSerializer):
+class EmployeeCreateUpdateSerializer(ModelSerializer):
     class Meta:
         #set the model
         model=Employee
