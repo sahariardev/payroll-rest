@@ -1,10 +1,10 @@
 
 
-from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView,CreateAPIView,UpdateAPIView
 from rest_framework import  renderers
 from ..Models.employee import Employee
 from rest_framework.views import APIView
-from ..Serializers.employee_serializer import EmployeeSerializer
+from ..Serializers.employee_serializer import EmployeeSerializer,EmployeeCreateSerializer
 from ..Service.salary_calculate_service import SalaryCalculateService
 from rest_framework.response import Response
 
@@ -30,6 +30,11 @@ class EmployeeDetail(RetrieveAPIView):
 
     def get_queryset(self):
         return self.employees
+
+'''One Employee Create View'''
+class EmployeeCreate(CreateAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeCreateSerializer
 
 
 
