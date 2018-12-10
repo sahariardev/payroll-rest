@@ -1,3 +1,4 @@
+
 from django.db import models
 from .salary_detail import SalaryDetail
 from .pay_head import  PayHead

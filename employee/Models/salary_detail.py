@@ -9,4 +9,3 @@ class SalaryDetail(models.Model):
 
     def __str__(self):
         return "Salary detail of "+self.employee.name
-

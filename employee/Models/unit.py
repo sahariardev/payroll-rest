@@ -1,3 +1,4 @@
+
 from django.db import models
 
 
@@ -8,4 +9,3 @@ class Unit(models.Model):
 
     def __str__(self):
         return self.name
-    
