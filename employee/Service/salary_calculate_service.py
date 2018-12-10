@@ -1,5 +1,5 @@
 from ..Models.employee import Employee
-from ..Models.attendence import Attendance
+from ..Models.attendance import Attendance
 
 
 class SalaryCalculateService():
@@ -25,11 +25,11 @@ class SalaryCalculateService():
            need 
         '''
         print('----hello world-----')
-        attendences = Attendance.objects.filter(employee_id=employee_id).filter(date__gt='2018-12-09').filter(
+        attendances = Attendance.objects.filter(employee_id=employee_id).filter(date__gt='2018-12-09').filter(
             date__lte='2020-12-09')
-        print(attendences)
+        print(attendances)
 
-        for attendence in attendences:
+        for attendence in attendances:
             print(attendence.production_attendance_type.name)
             print("{a} {b}".format(a=attendence.value, b=attendence.unit.name))
             print("--------------------------------------------")
