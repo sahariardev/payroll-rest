@@ -5,7 +5,7 @@ from .RestControllers.employee_controller import EmployeeList,EmployeeSalary,Emp
 from .RestControllers.unit_controller import  UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
 from .RestControllers.package_controller import  PackageListView,PackageDetailView,PackageCreateView,PackageUpdateView
 from .RestControllers.pay_head_controller import PayHeadListView,PayHeadCreateView,PayHeadDetailView,PayHeadUpdateView
-
+from .RestControllers.salary_detail_controller import SalaryDetailListView,SalaryDetailDetailView,SalaryDetailUpdateView,SalaryDetailCreateView
 urlpatterns = [
 
     url("employees/$",EmployeeList.as_view(),name="employees"),
@@ -26,7 +26,13 @@ urlpatterns = [
     url("payheads/$", PayHeadListView.as_view(), name="payheads"),
     url(r'^payheads/(?P<pk>\d+)/$', PayHeadDetailView.as_view(), name="payhead"),
     url(r'^payheads/create/$', PayHeadCreateView.as_view(), name="payhead_create"),
-    url(r'^payheads/(?P<pk>\d+)/edit/$', PayHeadUpdateView.as_view(), name="payhead_update")
+    url(r'^payheads/(?P<pk>\d+)/edit/$', PayHeadUpdateView.as_view(), name="payhead_update"),
+
+    url("salarydetails/$", SalaryDetailListView.as_view(), name="salarydetails"),
+    url(r'^salarydetails/(?P<pk>\d+)/$', SalaryDetailDetailView.as_view(), name="salarydetails"),
+    url(r'^salarydetails/create/$', SalaryDetailCreateView.as_view(), name="salarydetails_create"),
+    url(r'^salarydetails/(?P<pk>\d+)/edit/$', SalaryDetailUpdateView.as_view(), name="salarydetails_update")
+
 ]
 
 

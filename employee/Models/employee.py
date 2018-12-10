@@ -26,5 +26,6 @@ class Employee(models.Model):
 
     def __get__packageName(self):
         return self.peckage.name
+
     def __unicode__(self):
         return self.name
