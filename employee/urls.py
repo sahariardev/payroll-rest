@@ -1,12 +1,19 @@
 from django.conf.urls import url
-from .RestControllers.employee_controller import EmployeeList, EmployeeSalary, EmployeeDetail,\
-    EmployeeCreate, EmployeeUpdate
-from .RestControllers.unit_controller import UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
-from .RestControllers.package_controller import PackageListView, PackageDetailView,PackageCreateView, PackageUpdateView
+
+
+
+
 from .RestControllers.pay_head_type_controller import PayHeadTypeListView, PayHeadTypeDetailView, PayHeadTypeCreateView,\
     PayHeadTypeUpdateView
 from .RestControllers.attendance_controller import AttendanceListView, AttendanceDetailView,\
     AttendanceCreateView, AttendanceUpdateView
+from .RestControllers.employee_controller import EmployeeList,EmployeeSalary,EmployeeDetail,EmployeeCreate,EmployeeUpdate
+from .RestControllers.unit_controller import  UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
+from .RestControllers.package_controller import  PackageListView,PackageDetailView,PackageCreateView,PackageUpdateView
+from .RestControllers.pay_head_controller import PayHeadListView,PayHeadCreateView,PayHeadDetailView,PayHeadUpdateView
+from .RestControllers.salary_detail_controller import SalaryDetailListView,SalaryDetailDetailView,SalaryDetailUpdateView,SalaryDetailCreateView
+from .RestControllers.salary_detail_item_controller import SalaryDetailItemListView,SalaryDetailItemDetailView, SalaryDetailItemUpdateView,SalaryDetailItemCreateView
+
 
 
 urlpatterns = [
@@ -26,6 +33,7 @@ urlpatterns = [
     url(r'^packages/create/$', PackageCreateView.as_view(), name="package_create"),
     url(r'^packages/(?P<pk>\d+)/edit/$', PackageUpdateView.as_view(), name="package_update"),
 
+
     url("payheadtypes/$",PayHeadTypeListView.as_view(),name="payheadtypes"),
     url(r'^payheadtypes/(?P<pk>\d+)/$',PayHeadTypeDetailView.as_view(), name="payheadtype"),
     url(r'^packages/create/$', PayHeadTypeCreateView.as_view(), name="payheadtypes_create"),
@@ -35,6 +43,22 @@ urlpatterns = [
     url(r'^attendances/(?P<pk>\d+)/$',AttendanceDetailView.as_view(), name="attendance"),
     url(r'^attendances/create/$', AttendanceCreateView.as_view(), name="attendance_create"),
     url(r'^attendances/(?P<pk>\d+)/edit/$', AttendanceUpdateView.as_view(), name="attendance_update"),
+
+    url("payheads/$", PayHeadListView.as_view(), name="payheads"),
+    url(r'^payheads/(?P<pk>\d+)/$', PayHeadDetailView.as_view(), name="payhead"),
+    url(r'^payheads/create/$', PayHeadCreateView.as_view(), name="payhead_create"),
+    url(r'^payheads/(?P<pk>\d+)/edit/$', PayHeadUpdateView.as_view(), name="payhead_update"),
+
+    url("salarydetails/$", SalaryDetailListView.as_view(), name="salarydetails"),
+    url(r'^salarydetails/(?P<pk>\d+)/$', SalaryDetailDetailView.as_view(), name="salarydetails"),
+    url(r'^salarydetails/create/$', SalaryDetailCreateView.as_view(), name="salarydetails_create"),
+    url(r'^salarydetails/(?P<pk>\d+)/edit/$', SalaryDetailUpdateView.as_view(), name="salarydetails_update"),
+
+    url("salarydetailitems/$", SalaryDetailItemListView.as_view(), name="salarydetails"),
+    url(r'^salarydetailitems/(?P<pk>\d+)/$', SalaryDetailItemDetailView.as_view(), name="salarydetails"),
+    url(r'^salarydetailitems/create/$', SalaryDetailItemCreateView.as_view(), name="salarydetails_create"),
+    url(r'^salarydetailitems/(?P<pk>\d+)/edit/$', SalaryDetailItemUpdateView.as_view(), name="salarydetails_update")
+
 ]
 
 

@@ -7,7 +7,7 @@ from .production_attendance_type import  ProductionAttendanceType
 
 
 class PayHead(models.Model):
-
+    name=models.CharField(max_length=60,blank=False,null=True)
     description=models.TextField()
     add_net_salary = models.BooleanField()
     calculation_choices = (
@@ -32,4 +32,6 @@ class PayHead(models.Model):
     under = models.CharField(max_length=40,choices=under_types)
 
     def __str__(self):
-        return self.description
+        return self.name
+    def __unicode__(self):
+        return self.name
