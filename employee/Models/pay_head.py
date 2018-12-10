@@ -3,7 +3,7 @@ from django.db import models
 from .employee import Employee
 from .unit import Unit
 from .pay_head_type import  PayHeadType
-from .production_attendence_type import  ProductionAttendenceType
+from .production_attendance_type import  ProductionAttendanceType
 
 
 class PayHead(models.Model):
@@ -20,7 +20,7 @@ class PayHead(models.Model):
     calculation_type = models.CharField(max_length=40, choices=calculation_choices)
     calculation_period = models.ForeignKey(Unit,on_delete=models.SET_NULL,null=True)
     pay_head_type = models.ForeignKey(PayHeadType,on_delete=models.SET_NULL,null=True)
-    attendence_production_type=models.ForeignKey(ProductionAttendenceType,null=True,on_delete=models.SET_NULL,blank=True)
+    attendence_production_type=models.ForeignKey(ProductionAttendanceType, null=True, on_delete=models.SET_NULL, blank=True)
     add_or_deduct=models.CharField(max_length=10,choices=(('add','add'),('deduct','deduct')),blank=False,null=False,default='add');
     under_types =((
                     'Direct Expense','Direct Expense'

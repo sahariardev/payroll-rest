@@ -1,8 +1,13 @@
 from django.conf.urls import url
-from .RestControllers.employee_controller import EmployeeList,EmployeeSalary,EmployeeDetail,EmployeeCreate,EmployeeUpdate
-from .RestControllers.unit_controller import  UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
-from .RestControllers.package_controller import  PackageListView,PackageDetailView,PackageCreateView,PackageUpdateView
-from .RestControllers.pay_head_type_controller import  PayHeadTypeListView,PayHeadTypeDetailView,PayHeadTypeCreateView,PayHeadTypeUpdateView
+from .RestControllers.employee_controller import EmployeeList, EmployeeSalary, EmployeeDetail,\
+    EmployeeCreate, EmployeeUpdate
+from .RestControllers.unit_controller import UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
+from .RestControllers.package_controller import PackageListView, PackageDetailView,PackageCreateView, PackageUpdateView
+from .RestControllers.pay_head_type_controller import PayHeadTypeListView, PayHeadTypeDetailView, PayHeadTypeCreateView,\
+    PayHeadTypeUpdateView
+from .RestControllers.attendance_controller import AttendanceListView, AttendanceDetailView,\
+    AttendanceCreateView, AttendanceUpdateView
+
 
 urlpatterns = [
 
@@ -24,7 +29,12 @@ urlpatterns = [
     url("payheadtypes/$",PayHeadTypeListView.as_view(),name="payheadtypes"),
     url(r'^payheadtypes/(?P<pk>\d+)/$',PayHeadTypeDetailView.as_view(), name="payheadtype"),
     url(r'^packages/create/$', PayHeadTypeCreateView.as_view(), name="payheadtypes_create"),
-    url(r'^packages/(?P<pk>\d+)/edit/$', PayHeadTypeUpdateView.as_view(), name="package_update")
+    url(r'^packages/(?P<pk>\d+)/edit/$', PayHeadTypeUpdateView.as_view(), name="package_update"),
+
+    url("attendances/$",AttendanceListView.as_view(),name="attendances"),
+    url(r'^attendances/(?P<pk>\d+)/$',AttendanceDetailView.as_view(), name="attendance"),
+    url(r'^attendances/create/$', AttendanceCreateView.as_view(), name="attendance_create"),
+    url(r'^attendances/(?P<pk>\d+)/edit/$', AttendanceUpdateView.as_view(), name="attendance_update"),
 ]
 
 
