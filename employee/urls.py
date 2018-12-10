@@ -4,6 +4,7 @@ from django.conf.urls import url
 from .RestControllers.employee_controller import EmployeeList,EmployeeSalary,EmployeeDetail,EmployeeCreate,EmployeeUpdate
 from .RestControllers.unit_controller import  UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
 from .RestControllers.package_controller import  PackageListView,PackageDetailView,PackageCreateView,PackageUpdateView
+from .RestControllers.pay_head_controller import PayHeadListView,PayHeadCreateView,PayHeadDetailView,PayHeadUpdateView
 
 urlpatterns = [
 
@@ -20,7 +21,12 @@ urlpatterns = [
     url("packages/$",PackageListView.as_view(),name="packages"),
     url(r'^packages/(?P<pk>\d+)/$',PackageDetailView.as_view(), name="package"),
     url(r'^packages/create/$', PackageCreateView.as_view(), name="package_create"),
-    url(r'^packages/(?P<pk>\d+)/edit/$', PackageUpdateView.as_view(), name="package_update")
+    url(r'^packages/(?P<pk>\d+)/edit/$', PackageUpdateView.as_view(), name="package_update"),
+
+    url("payheads/$", PayHeadListView.as_view(), name="payheads"),
+    url(r'^payheads/(?P<pk>\d+)/$', PayHeadDetailView.as_view(), name="payhead"),
+    url(r'^payheads/create/$', PayHeadCreateView.as_view(), name="payhead_create"),
+    url(r'^payheads/(?P<pk>\d+)/edit/$', PayHeadUpdateView.as_view(), name="payhead_update")
 ]
 
 
