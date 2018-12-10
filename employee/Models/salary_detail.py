@@ -9,3 +9,6 @@ class SalaryDetail(models.Model):
 
     def __str__(self):
         return "Salary detail of "+self.employee.name
+
+    def __unicode__(self):
+        return self.employee.name+" Effective from {a} Effective till date {b}".format(a=self.effective_from,b=self.effective_till_date)
