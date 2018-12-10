@@ -1,5 +1,5 @@
 
-from django.urls import path
+
 from django.conf.urls import url
 from .RestControllers.employee_controller import EmployeeList,EmployeeSalary,EmployeeDetail,EmployeeCreate,EmployeeUpdate
 from .RestControllers.unit_controller import  UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^packages/create/$', PackageCreateView.as_view(), name="package_create"),
     url(r'^packages/(?P<pk>\d+)/edit/$', PackageUpdateView.as_view(), name="package_update")
 ]
+
 
