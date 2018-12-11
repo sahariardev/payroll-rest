@@ -44,9 +44,10 @@ class EmplyeeAttendanceInDateRangeListView(ListAPIView):
     renderer_classes = [renderers.JSONRenderer]
 
     def get_queryset(self):
-        return Attendance.objects.filter(employee=self.employee_id).filter(date__gte=self.from_date).filter(date__lte=self.till_date)
+        return Attendance.objects.filter(employee=self.employee_id).filter(date__gte=self.from_date).filter(date__lte = self.till_date)
+
     def get(self, request, *args, **kwargs):
-        self.employee_id=kwargs['employee_id']
-        self.from_date=kwargs['from_date']
-        self.till_date=kwargs['till_date']
+        self.employee_id = kwargs['employee_id']
+        self.from_date = kwargs['from_date']
+        self.till_date = kwargs['till_date']
         return self.list(request, *args, **kwargs)
