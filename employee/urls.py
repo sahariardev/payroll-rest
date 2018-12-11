@@ -6,7 +6,7 @@ from django.conf.urls import url
 from .RestControllers.pay_head_type_controller import PayHeadTypeListView, PayHeadTypeDetailView, PayHeadTypeCreateView,\
     PayHeadTypeUpdateView
 from .RestControllers.attendance_controller import AttendanceListView, AttendanceDetailView,\
-    AttendanceCreateView, AttendanceUpdateView,EmplyeeAttendanceListView
+    AttendanceCreateView, AttendanceUpdateView,EmplyeeAttendanceListView,EmplyeeAttendanceInDateRangeListView
 from .RestControllers.employee_controller import EmployeeList,EmployeeSalary,EmployeeDetail,EmployeeCreate,EmployeeUpdate
 from .RestControllers.unit_controller import  UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
 from .RestControllers.package_controller import  PackageListView,PackageDetailView,PackageCreateView,PackageUpdateView
@@ -44,7 +44,8 @@ urlpatterns = [
     url(r'^attendances/(?P<pk>\d+)/$',AttendanceDetailView.as_view(), name="attendance"),
     url(r'^attendances/create/$', AttendanceCreateView.as_view(), name="attendance_create"),
     url(r'^attendances/(?P<pk>\d+)/edit/$', AttendanceUpdateView.as_view(), name="attendance_update"),
-    url("attendances/employees/(?P<employee_id>\d+)/$",EmplyeeAttendanceListView.as_view(),name="employee_attendance"),
+    url("employees/(?P<employee_id>\d+)/attendances$",EmplyeeAttendanceListView.as_view(),name="employee_attendance"),
+    url("employees/(?P<employee_id>\d+)/attendances/fromdate/(?P<from_date>\d{2}-\d{2}-\d{4})/tilldate/(?P<till_date>\d{2}-\d{2}-\d{4})$",EmplyeeAttendanceInDateRangeListView.as_view(),name="employee_attendance_in_date_range"),
 
 
 
