@@ -13,6 +13,7 @@ from .RestControllers.package_controller import  PackageListView,PackageDetailVi
 from .RestControllers.pay_head_controller import PayHeadListView,PayHeadCreateView,PayHeadDetailView,PayHeadUpdateView
 from .RestControllers.salary_detail_controller import SalaryDetailListView,SalaryDetailDetailView,SalaryDetailUpdateView,SalaryDetailCreateView
 from .RestControllers.salary_detail_item_controller import SalaryDetailItemListView,SalaryDetailItemDetailView, SalaryDetailItemUpdateView,SalaryDetailItemCreateView
+from .RestControllers.production_attendance_type_controller import ProductionAttendanceTypeListView,ProductionAttendanceTypeDetailView, ProductionAttendanceTypeUpdateView,ProductionAttendanceTypeCreateView
 
 
 
@@ -57,7 +58,12 @@ urlpatterns = [
     url("salarydetailitems/$", SalaryDetailItemListView.as_view(), name="salarydetails"),
     url(r'^salarydetailitems/(?P<pk>\d+)/$', SalaryDetailItemDetailView.as_view(), name="salarydetails"),
     url(r'^salarydetailitems/create/$', SalaryDetailItemCreateView.as_view(), name="salarydetails_create"),
-    url(r'^salarydetailitems/(?P<pk>\d+)/edit/$', SalaryDetailItemUpdateView.as_view(), name="salarydetails_update")
+    url(r'^salarydetailitems/(?P<pk>\d+)/edit/$', SalaryDetailItemUpdateView.as_view(), name="salarydetails_update"),
+
+    url("productionattendencetypes/$", ProductionAttendanceTypeListView.as_view(), name="productionattendencetypes"),
+    url(r'^productionattendencetypes/(?P<pk>\d+)/$', ProductionAttendanceTypeDetailView.as_view(), name="productionattendencetypes"),
+    url(r'^productionattendencetypes/create/$', ProductionAttendanceTypeCreateView.as_view(), name="productionattendencetypes_create"),
+    url(r'^productionattendencetypes/(?P<pk>\d+)/edit/$', ProductionAttendanceTypeUpdateView.as_view(), name="productionattendencetypes_update")
 
 ]
 
