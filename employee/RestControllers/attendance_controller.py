@@ -25,3 +25,16 @@ class AttendanceCreateView(CreateAPIView):
 class AttendanceUpdateView(UpdateAPIView):
     queryset = Attendance.objects.all()
     serializer_class = AttendanceDetailSerializer
+
+
+'''Additional controller classes'''
+
+class EmplyeeAttendanceListView(ListAPIView):
+    serializer_class = AttendanceListSerializer
+    renderer_classes = [renderers.JSONRenderer]
+
+    def get_queryset(self):
+        return Attendance.objects.filter(employee=self.employee_id)
+    def get(self, request, *args, **kwargs):
+        self.employee_id=kwargs['employee_id']
+        return self.list(request, *args, **kwargs)
