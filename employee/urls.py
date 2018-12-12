@@ -40,12 +40,12 @@ urlpatterns = [
     url(r'^packages/create/$', PayHeadTypeCreateView.as_view(), name="payheadtypes_create"),
     url(r'^packages/(?P<pk>\d+)/edit/$', PayHeadTypeUpdateView.as_view(), name="package_update"),
 
-    url("attendances/$",AttendanceListView.as_view(),name="attendances"),
+    url(r"^attendances/$",AttendanceListView.as_view(),name="attendances"),
     url(r'^attendances/(?P<pk>\d+)/$',AttendanceDetailView.as_view(), name="attendance"),
     url(r'^attendances/create/$', AttendanceCreateView.as_view(), name="attendance_create"),
     url(r'^attendances/(?P<pk>\d+)/edit/$', AttendanceUpdateView.as_view(), name="attendance_update"),
-    url("employees/(?P<employee_id>\d+)/attendances$",EmplyeeAttendanceListView.as_view(),name="employee_attendance"),
-    url("employees/(?P<employee_id>\d+)/attendances/fromdate/(?P<from_date>\d{2}-\d{2}-\d{4})/tilldate/(?P<till_date>\d{2}-\d{2}-\d{4})$",EmplyeeAttendanceInDateRangeListView.as_view(),name="employee_attendance_in_date_range"),
+    url(r"^employees/(?P<employee_id>\d+)/attendances/$",EmplyeeAttendanceListView.as_view(),name="employee_attendance"),
+    url(r"^employees/(?P<employee_id>\d+)/attendances/fromdate/(?P<from_date>\d{4}-\d{2}-\d{2})/tilldate/(?P<till_date>\d{4}-\d{2}-\d{2})/$",EmplyeeAttendanceInDateRangeListView.as_view(),name="employee_attendance_in_date_range"),
 
 
 
