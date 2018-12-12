@@ -51,7 +51,7 @@ class EmployeeUpdate(UpdateAPIView):
     lookup_field = 'pk'
 
 
-
+'''
 class EmployeeSalary(APIView):
 
     employee=Employee.objects.get(pk=1)
@@ -84,4 +84,4 @@ class EmployeeSalary(APIView):
     def get(self, request,pk):
         s=EmployeeSerializer(self.employee)
         return Response(data={"status":s.data})
-
+'''

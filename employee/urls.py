@@ -7,14 +7,14 @@ from .RestControllers.pay_head_type_controller import PayHeadTypeListView, PayHe
     PayHeadTypeUpdateView
 from .RestControllers.attendance_controller import AttendanceListView, AttendanceDetailView,\
     AttendanceCreateView, AttendanceUpdateView,EmplyeeAttendanceListView,EmplyeeAttendanceInDateRangeListView
-from .RestControllers.employee_controller import EmployeeList,EmployeeSalary,EmployeeDetail,EmployeeCreate,EmployeeUpdate
+from .RestControllers.employee_controller import EmployeeList,EmployeeDetail,EmployeeCreate,EmployeeUpdate
 from .RestControllers.unit_controller import  UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
 from .RestControllers.package_controller import  PackageListView,PackageDetailView,PackageCreateView,PackageUpdateView
 from .RestControllers.pay_head_controller import PayHeadListView,PayHeadCreateView,PayHeadDetailView,PayHeadUpdateView
 from .RestControllers.salary_detail_controller import SalaryDetailListView,SalaryDetailDetailView,SalaryDetailUpdateView,SalaryDetailCreateView
 from .RestControllers.salary_detail_item_controller import SalaryDetailItemListView,SalaryDetailItemDetailView, SalaryDetailItemUpdateView,SalaryDetailItemCreateView
 from .RestControllers.production_attendance_type_controller import ProductionAttendanceTypeListView,ProductionAttendanceTypeDetailView, ProductionAttendanceTypeUpdateView,ProductionAttendanceTypeCreateView
-
+from .RestControllers.computation_info_controller  import ComputationInfoListView,ComputationInfoDetailView,ComputationInfoUpdateView,ComputationInfoCreateView
 
 
 urlpatterns = [
@@ -67,7 +67,13 @@ urlpatterns = [
     url("productionattendencetypes/$", ProductionAttendanceTypeListView.as_view(), name="productionattendencetypes"),
     url(r'^productionattendencetypes/(?P<pk>\d+)/$', ProductionAttendanceTypeDetailView.as_view(), name="productionattendencetypes"),
     url(r'^productionattendencetypes/create/$', ProductionAttendanceTypeCreateView.as_view(), name="productionattendencetypes_create"),
-    url(r'^productionattendencetypes/(?P<pk>\d+)/edit/$', ProductionAttendanceTypeUpdateView.as_view(), name="productionattendencetypes_update")
+    url(r'^productionattendencetypes/(?P<pk>\d+)/edit/$', ProductionAttendanceTypeUpdateView.as_view(), name="productionattendencetypes_update"),
+
+    url(r"^computationinfos/$", ComputationInfoListView.as_view(), name="computationinfos"),
+    url(r'^computationinfos/(?P<pk>\d+)/$', ComputationInfoDetailView.as_view(), name="computationinfo"),
+    url(r'^computationinfos/create/$', ComputationInfoCreateView.as_view(), name="computationinfos_create"),
+    url(r'^computationinfos/(?P<pk>\d+)/edit/$', ComputationInfoUpdateView.as_view(), name="computationinfos_update")
+
 
 ]
 
