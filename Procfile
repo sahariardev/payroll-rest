@@ -1,1 +1,1 @@
-web: gunicorn payroll-rest.wsgi
+web: gunicorn rest.wsgi
