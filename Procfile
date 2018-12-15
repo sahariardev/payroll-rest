@@ -1,2 +1,2 @@
-release: python manage.py migrategit a
+release: python manage.py migrate
 web: gunicorn rest.wsgi
