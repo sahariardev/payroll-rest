@@ -1,0 +1,1 @@
+web: gunicorn payrll-rest.wsgi
