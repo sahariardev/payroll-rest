@@ -6,7 +6,7 @@ from ..Models.employee import Employee
 class EmployeeSerializer(ModelSerializer):
     class Meta:
         model=Employee
-        fields=['name','address','id','date_of_joining''email']
+        fields=['name','address','id','date_of_joining','email']
 
 class EmployeeDetailSerializer(ModelSerializer):
     peckage=StringRelatedField()
