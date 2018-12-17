@@ -3,7 +3,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView,CreateAPIView,U
 from rest_framework import  renderers
 from ..Models.employee import Employee
 from rest_framework.views import APIView
-from ..Serializers.employee_serializer import EmployeeSerializer,EmployeeCreateUpdateSerializer
+from ..Serializers.employee_serializer import EmployeeSerializer,EmployeeCreateUpdateSerializer,EmployeeDetailSerializer
 from ..Service.salary_calculate_service import SalaryCalculateService
 from rest_framework.response import Response
 
@@ -26,7 +26,7 @@ class EmployeeDetail(RetrieveAPIView):
     # model added and data fetched
     employees = Employee.objects.all()
     # serializer added
-    serializer_class = EmployeeSerializer
+    serializer_class = EmployeeDetailSerializer
     # show raw josn
     renderer_classes = [renderers.JSONRenderer]
 
