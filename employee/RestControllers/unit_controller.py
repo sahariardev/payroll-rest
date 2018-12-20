@@ -20,7 +20,7 @@ class UnitDetailView(RetrieveAPIView):
 class UnitCreateView(CreateAPIView):
     queryset = Unit.objects.all()
     serializer_class = UnitCreateSerializer
-
+    renderer_classes = [renderers.JSONRenderer]
 
 class UnitUpdateView(UpdateAPIView):
     queryset = Unit.objects.all()
