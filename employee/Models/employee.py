@@ -6,7 +6,7 @@ from .designation import Designation
 class Employee(models.Model):
 
     name=models.CharField(max_length=30,blank=False)
-    date_of_joining=models.DateField(auto_now=True)
+    date_of_joining=models.DateField()
     #we do not want to delete any items from the db
     peckage=models.ForeignKey(Package,on_delete=models.SET_NULL, null=True)
     gender_choices=(('M','Male'),('F','Female'));

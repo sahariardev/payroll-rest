@@ -22,4 +22,4 @@ class EmployeeCreateUpdateSerializer(ModelSerializer):
         #set the model
         model=Employee
         #set the fields list
-fields=['name','address','date_of_joining','gender','date_of_birth','blood_group','marital_status','address','contact','email','spouse_name','designation','peckage']
+        fields=['name','address','date_of_joining','gender','date_of_birth','blood_group','marital_status','address','contact','email','spouse_name','designation','peckage']
