@@ -30,10 +30,12 @@ urlpatterns = [
     url(r'^packages/(?P<pk>\d+)/$',PackageDetailView.as_view(), name="package"),
     url(r'^packages/create/$', PackageCreateView.as_view(), name="package_create"),
     url(r'^packages/(?P<pk>\d+)/edit/$', PackageUpdateView.as_view(), name="package_update"),
+
     url("payheadtypes/$",PayHeadTypeListView.as_view(),name="payheadtypes"),
     url(r'^payheadtypes/(?P<pk>\d+)/$',PayHeadTypeDetailView.as_view(), name="payheadtype"),
-    url(r'^packages/create/$', PayHeadTypeCreateView.as_view(), name="payheadtypes_create"),
-    url(r'^packages/(?P<pk>\d+)/edit/$', PayHeadTypeUpdateView.as_view(), name="package_update"),
+    url(r'^payheadtypes/create/$', PayHeadTypeCreateView.as_view(), name="payheadtypes_create"),
+    url(r'^payheadtypes/(?P<pk>\d+)/edit/$', PayHeadTypeUpdateView.as_view(), name="payheadtypes_update"),
+
     url(r"^attendances/$",AttendanceListView.as_view(),name="attendances"),
     url(r'^attendances/(?P<pk>\d+)/$',AttendanceDetailView.as_view(), name="attendance"),
     url(r'^attendances/create/$', AttendanceCreateView.as_view(), name="attendance_create"),

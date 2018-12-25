@@ -10,7 +10,7 @@ class PayHeadTypeListSerializer(ModelSerializer):
 class PayHeadTypeDetailSerializer(ModelSerializer):
     class Meta:
         model=PayHeadType
-        fields=['id','name','symbol','description'];
+        fields=['id','name','description'];
 
 
 class PayHeadTypeCreateSerializer(ModelSerializer):
