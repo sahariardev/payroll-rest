@@ -72,7 +72,7 @@ urlpatterns = [
     url(r"^computationinfos/$", ComputationInfoListView.as_view(), name="computationinfos"),
     url(r'^computationinfos/(?P<pk>\d+)/$', ComputationInfoDetailView.as_view(), name="computationinfo"),
     url(r'^computationinfos/create/$', ComputationInfoCreateView.as_view(), name="computationinfos_create"),
-    url(r'^computationinfos/(?P<pk>\d+)/edit/$', ComputationInfoUpdateView.as_view(), name="computationinfos_update")
+    url(r'^computationinfos/(?P<pk>\d+)/edit/$', ComputationInfoUpdateView.as_view(), name="computationinfos_update"),
 
     url(r"^unitrelations/$", UnitRelationListView.as_view(), name="unitrelations"),
     url(r'^unitrelations/(?P<pk>\d+)/$', UnitRelationDetailView.as_view(), name="unitrelations"),
