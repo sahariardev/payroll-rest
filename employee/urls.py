@@ -14,6 +14,7 @@ from .RestControllers.designation_controller import  DesignationListView,Designa
 from .RestControllers.salary_detail_item_controller import SalaryDetailItemListView,SalaryDetailItemDetailView, SalaryDetailItemUpdateView,SalaryDetailItemCreateView
 from .RestControllers.production_attendance_type_controller import ProductionAttendanceTypeListView,ProductionAttendanceTypeDetailView, ProductionAttendanceTypeUpdateView,ProductionAttendanceTypeCreateView
 from .RestControllers.computation_info_controller  import ComputationInfoListView,ComputationInfoDetailView,ComputationInfoUpdateView,ComputationInfoCreateView
+from .RestControllers.unit_relation_controller  import UnitRelationListView,UnitRelationDetailView,UnitRelationUpdateView,UnitRelationCreateView
 
 
 
@@ -42,30 +43,41 @@ urlpatterns = [
     url(r'^attendances/(?P<pk>\d+)/edit/$', AttendanceUpdateView.as_view(), name="attendance_update"),
     url(r"^employees/(?P<employee_id>\d+)/attendances/$",EmplyeeAttendanceListView.as_view(),name="employee_attendance"),
     url(r"^employees/(?P<employee_id>\d+)/attendances/fromdate/(?P<from_date>\d{4}-\d{2}-\d{2})/tilldate/(?P<till_date>\d{4}-\d{2}-\d{2})/$", EmplyeeAttendanceInDateRangeListView.as_view(),name="employee_attendance_in_date_range"),
+
     url("payheads/$", PayHeadListView.as_view(), name="payheads"),
     url(r'^payheads/(?P<pk>\d+)/$', PayHeadDetailView.as_view(), name="payhead"),
     url(r'^payheads/create/$', PayHeadCreateView.as_view(), name="payhead_create"),
     url(r'^payheads/(?P<pk>\d+)/edit/$', PayHeadUpdateView.as_view(), name="payhead_update"),
+
     url("salarydetails/$", SalaryDetailListView.as_view(), name="salarydetails"),
     url(r'^salarydetails/(?P<pk>\d+)/$', SalaryDetailDetailView.as_view(), name="salarydetails"),
     url(r'^salarydetails/create/$', SalaryDetailCreateView.as_view(), name="salarydetails_create"),
     url(r'^salarydetails/(?P<pk>\d+)/edit/$', SalaryDetailUpdateView.as_view(), name="salarydetails_update"),
+
     url("salarydetailitems/$", SalaryDetailItemListView.as_view(), name="salarydetails"),
     url(r'^salarydetailitems/(?P<pk>\d+)/$', SalaryDetailItemDetailView.as_view(), name="salarydetails"),
     url(r'^salarydetailitems/create/$', SalaryDetailItemCreateView.as_view(), name="salarydetails_create"),
     url(r'^salarydetailitems/(?P<pk>\d+)/edit/$', SalaryDetailItemUpdateView.as_view(), name="salarydetails_update"),
+
     url("productionattendancetypes/$", ProductionAttendanceTypeListView.as_view(), name="productionattendencetypes"),
     url(r'^productionattendancetypes/(?P<pk>\d+)/$', ProductionAttendanceTypeDetailView.as_view(), name="productionattendencetypes"),
     url(r'^productionattendancetypes/create/$', ProductionAttendanceTypeCreateView.as_view(), name="productionattendencetypes_create"),
     url(r'^productionattendancetypes/(?P<pk>\d+)/edit/$', ProductionAttendanceTypeUpdateView.as_view(), name="productionattendencetypes_update"),
+
     url("designations/$", DesignationListView.as_view(), name="designations"),
     url(r'^designations/(?P<pk>\d+)/$', DesignationDetailView.as_view(), name="designation"),
     url(r'^designations/create/$', DesignationCreateView.as_view(), name="designations_create"),
     url(r'^designations/(?P<pk>\d+)/edit/$', DesignationUpdateView.as_view(), name="designations_update"),
+
     url(r"^computationinfos/$", ComputationInfoListView.as_view(), name="computationinfos"),
     url(r'^computationinfos/(?P<pk>\d+)/$', ComputationInfoDetailView.as_view(), name="computationinfo"),
     url(r'^computationinfos/create/$', ComputationInfoCreateView.as_view(), name="computationinfos_create"),
     url(r'^computationinfos/(?P<pk>\d+)/edit/$', ComputationInfoUpdateView.as_view(), name="computationinfos_update")
+
+    url(r"^unitrelations/$", UnitRelationListView.as_view(), name="unitrelations"),
+    url(r'^unitrelations/(?P<pk>\d+)/$', UnitRelationDetailView.as_view(), name="unitrelations"),
+    url(r'^unitrelations/create/$', UnitRelationCreateView.as_view(), name="unitrelations_create"),
+    url(r'^unitrelations/(?P<pk>\d+)/edit/$', UnitRelationUpdateView.as_view(), name="unitrelations_update")
 
 
 
