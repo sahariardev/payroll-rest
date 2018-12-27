@@ -32,3 +32,8 @@ class SalaryDetailCreateSerializer(ModelSerializer):
         model=SalaryDetail
         fields = ['effective_from', 'effective_till_date', 'employee'];
 
+class SalaryDetailUpdateSerializer(ModelSerializer):
+    class Meta:
+        model=SalaryDetail
+        fields = ['id','effective_from', 'effective_till_date',];
+
