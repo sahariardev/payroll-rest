@@ -45,3 +45,5 @@ python manage.py createsuperuser (enter username, email, password)
 
 python manage.py runserver
 
+#
+release: bash release-tasks.sh
