@@ -15,3 +15,8 @@ class PackageCreateSerializer(ModelSerializer):
     class Meta:
         model=Package
         fields=['name','salary','annual_leave','sick_leave','extra','description'];
+
+class PackageIdNameSerializer(ModelSerializer):
+    class Meta:
+        model=Package
+        fields=['name','id'];
