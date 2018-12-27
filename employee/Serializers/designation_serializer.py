@@ -18,3 +18,9 @@ class DesignationCreateSerializer(ModelSerializer):
     class Meta:
         model = Designation
         fields = ['name', 'description'];
+
+
+class DesignationIdNameSerializer(ModelSerializer):
+    class Meta:
+        model = Designation
+        fields = ['id', 'description'];

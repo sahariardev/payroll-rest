@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer,SerializerMethodField,StringRelatedField
 from ..Models.employee import Employee
+from .designation_serializer import DesignationIdNameSerializer
 
 
 
@@ -10,7 +11,7 @@ class EmployeeSerializer(ModelSerializer):
 
 class EmployeeDetailSerializer(ModelSerializer):
     peckage=StringRelatedField()
-    designation=StringRelatedField()
+    designation=DesignationIdNameSerializer()
     class Meta:
         #set the model
         model=Employee
