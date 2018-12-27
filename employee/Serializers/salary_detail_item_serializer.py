@@ -19,4 +19,4 @@ class SalaryDetailItemDetailSerializer(ModelSerializer):
 class SalaryDetailItemCreateSerializer(ModelSerializer):
     class Meta:
         model=SalaryDetailItem
-        fields = ['id', 'salary_detail', 'pay_head', 'priority', 'value', 'rate', 'unit']
+        fields = ['salary_detail', 'pay_head', 'priority', 'value', 'rate', 'unit']

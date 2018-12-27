@@ -13,7 +13,7 @@ class SalaryDetailListSerializer(ModelSerializer):
         return d.data
     class Meta:
         model=SalaryDetail
-        fields=['id','effective_from','effective_till_date','employee','salary_detail_item'];
+        fields=['id','effective_from','name','effective_till_date','employee','salary_detail_item'];
 
 class SalaryDetailDetailSerializer(ModelSerializer):
     employee = StringRelatedField()
@@ -25,12 +25,12 @@ class SalaryDetailDetailSerializer(ModelSerializer):
         return d.data
     class Meta:
         model=SalaryDetail
-        fields = ['id', 'effective_from', 'effective_till_date', 'employee','salary_detail_item'];
+        fields = ['id', 'effective_from','name', 'effective_till_date', 'employee','salary_detail_item'];
 
 class SalaryDetailCreateSerializer(ModelSerializer):
     class Meta:
         model=SalaryDetail
-        fields = ['effective_from', 'effective_till_date', 'employee'];
+        fields = ['effective_from', 'name','effective_till_date', 'employee'];
 
 class SalaryDetailUpdateSerializer(ModelSerializer):
     class Meta:
