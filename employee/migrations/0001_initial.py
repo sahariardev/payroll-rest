@@ -124,6 +124,17 @@ class Migration(migrations.Migration):
                 ('description', models.TextField()),
             ],
         ),
+        migrations.CreateModel(
+            name='UnitRelation',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('effective_from', models.DateField()),
+                ('effective_till_date' ,models.DateField()),
+                ('first_unit',models.IntegerField()),
+                ('value',models.FloatField()),
+                ('second_unit',models.IntegerField())
+            ],
+        ),
         migrations.AddField(
             model_name='salarydetailitem',
             name='unit',
