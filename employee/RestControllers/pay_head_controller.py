@@ -1,6 +1,7 @@
 from rest_framework.generics import ListAPIView,RetrieveAPIView,CreateAPIView,UpdateAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.request import Request
 from rest_framework import renderers
 from ..Models.pay_head import  PayHead
 from ..Serializers.pay_head_serializer import PayHeadCreateSerializer,PayHeadDetailSerializer,PayHeadListSerializer
@@ -28,7 +29,11 @@ class PayHeadTestView(APIView):
     renderer_classes = [renderers.JSONRenderer]
 
     def post(self, request, format=None):
-        print(request)
+        print("--------------------------")
+        print(request.__getattr__('name'))
+        print("--------------------------")
+        print(request.POST.get('name'))
+        print("--------------------------")
         return Response(request)
 
 
