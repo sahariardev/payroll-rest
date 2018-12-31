@@ -1,4 +1,6 @@
 from rest_framework.generics import ListAPIView,RetrieveAPIView,CreateAPIView,UpdateAPIView
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework import renderers
 from ..Models.pay_head import  PayHead
 from ..Serializers.pay_head_serializer import PayHeadCreateSerializer,PayHeadDetailSerializer,PayHeadListSerializer
@@ -19,6 +21,16 @@ class PayHeadDetailView(RetrieveAPIView):
 class PayHeadCreateView(CreateAPIView):
     queryset = PayHead.objects.all()
     serializer_class = PayHeadCreateSerializer
+    #return the pk
+
+
+class PayHeadTestView(APIView):
+    renderer_classes = [renderers.JSONRenderer]
+
+    def post(self, request, format=None):
+        print(request)
+        return Response(request)
+
 
 
 
