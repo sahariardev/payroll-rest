@@ -180,4 +180,10 @@ class Migration(migrations.Migration):
             name='unit',
             field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='employee.Unit'),
         ),
+        migrations.AddField(
+            model_name='salarydetail',
+            name='name',
+            field=models.CharField(max_length=30,null=True)
+,
+        ),
     ]
