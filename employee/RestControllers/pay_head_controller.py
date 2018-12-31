@@ -31,9 +31,9 @@ class PayHeadTestView(APIView):
     def post(self, request, format=None):
         print("--------------------------")
         print("--------------------------")
-        print(request.POST.get('name'))
+        print(request.POST)
         print("--------------------------")
-        return Response(request)
+        return Response(request.POST)
 
 
 
