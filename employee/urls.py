@@ -8,7 +8,7 @@ from .RestControllers.attendance_controller import AttendanceListView, Attendanc
 from .RestControllers.employee_controller import EmployeeList,EmployeeDetail,EmployeeCreate,EmployeeUpdate
 from .RestControllers.unit_controller import  UnitListView,UnitDetailView,UnitCreateView,UnitUpdateView
 from .RestControllers.package_controller import  PackageListView,PackageDetailView,PackageCreateView,PackageUpdateView
-from .RestControllers.pay_head_controller import PayHeadListView,PayHeadCreateView,PayHeadDetailView,PayHeadUpdateView,PayHeadTestView,PayHeadTestViewSetView
+from .RestControllers.pay_head_controller import PayHeadListView,PayHeadCreateView,PayHeadDetailView,PayHeadUpdateView,PayHeadTestView
 from .RestControllers.salary_detail_controller import SalaryDetailListView,SalaryDetailDetailView,SalaryDetailUpdateView,SalaryDetailCreateView
 from .RestControllers.designation_controller import  DesignationListView,DesignationDetailView,DesignationCreateView,DesignationUpdateView
 from .RestControllers.salary_detail_item_controller import SalaryDetailItemListView,SalaryDetailItemDetailView, SalaryDetailItemUpdateView,SalaryDetailItemCreateView
@@ -49,7 +49,7 @@ urlpatterns = [
     url(r'^payheads/(?P<pk>\d+)/$', PayHeadDetailView.as_view(), name="payhead"),
     url(r'^payheads/create/$', PayHeadCreateView.as_view(), name="payhead_create"),
     url(r'^payheads/(?P<pk>\d+)/edit/$', PayHeadUpdateView.as_view(), name="payhead_update"),
-    url(r"^payheads/test/$", PayHeadTestViewSetView.as_view({"post":"create"}), name="payheadsTest"),
+    url(r"^payheads/test/$", PayHeadTestView.as_view(), name="payheadsTest"),
 
     url("salarydetails/$", SalaryDetailListView.as_view(), name="salarydetails"),
     url(r'^salarydetails/(?P<pk>\d+)/$', SalaryDetailDetailView.as_view(), name="salarydetails"),

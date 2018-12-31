@@ -1,5 +1,6 @@
 from rest_framework.generics import ListAPIView,RetrieveAPIView,CreateAPIView,UpdateAPIView
 from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework import renderers
@@ -23,31 +24,19 @@ class PayHeadDetailView(RetrieveAPIView):
 class PayHeadCreateView(CreateAPIView):
     queryset = PayHead.objects.all()
     serializer_class = PayHeadCreateSerializer
-    #return the pk
+
 
 
 class PayHeadTestView(APIView):
     renderer_classes = [renderers.JSONRenderer]
 
     def post(self, request, format=None):
-        print("--------------------------")
-        print("--------------------------")
-        print(request.data)
-        print(request.POST)
-        print("--------------------------")
-        return Response(request.POST)
-class PayHeadTestViewSetView(ViewSet):
-    renderer_classes = [renderers.JSONRenderer]
-    def create(self,request):
-        queryset = PayHead.objects.all()
-        serializer = PayHeadCreateSerializer
-        print("--------------------------")
-        print("--------------------------")
-        print(request.data)
-        print(request.POST)
-        print(serializer.data)
-        print("--------------------------")
-        return Response(serializer.data)
+
+        '''All data are avaialble on request.data
+           get the data and then save one by one
+        '''
+        return Response(request.POST,tatus=status.HTTP_201_CREATED)
+
 
 class PayHeadUpdateView(UpdateAPIView):
     queryset = PayHead.objects.all()

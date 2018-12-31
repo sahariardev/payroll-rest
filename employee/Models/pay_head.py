@@ -17,6 +17,8 @@ class PayHead(models.Model):
                             ('As Computed Value', 'As Computed Value'),
                             ('As Custom Value', 'As Custom Value')
                           )
+    rate=models.FloatField(null=True)
+    rule = models.CharField(max_length=100, null=True)
     calculation_type = models.CharField(max_length=40, choices=calculation_choices)
     calculation_period = models.ForeignKey(Unit,on_delete=models.SET_NULL,null=True)
     pay_head_type = models.ForeignKey(PayHeadType,on_delete=models.SET_NULL,null=True)
