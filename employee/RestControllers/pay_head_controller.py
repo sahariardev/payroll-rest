@@ -1,5 +1,4 @@
 from rest_framework.generics import ListAPIView,RetrieveAPIView,CreateAPIView,UpdateAPIView
-from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.request import Request
@@ -27,12 +26,12 @@ class PayHeadCreateView(CreateAPIView):
 
 
 class PayHeadTestView(APIView):
-    parser_classes = (JSONParser,)
     renderer_classes = [renderers.JSONRenderer]
 
     def post(self, request, format=None):
         print("--------------------------")
         print("--------------------------")
+        print(request.data)
         print(request.POST)
         print("--------------------------")
         return Response(request.POST)
