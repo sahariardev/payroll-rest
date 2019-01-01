@@ -186,4 +186,16 @@ class Migration(migrations.Migration):
             field=models.CharField(max_length=30,null=True)
 ,
         ),
+        migrations.AddField(
+            model_name='payhead',
+            name='rate',
+            field=models.FloatField(null=True)
+            ,
+        ),
+        migrations.AddField(
+            model_name='payhead',
+            name='rule',
+            field=models.CharField(max_length=100, null=True)
+            ,
+        ),
     ]
