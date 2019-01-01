@@ -15,6 +15,8 @@ from .RestControllers.salary_detail_item_controller import SalaryDetailItemListV
 from .RestControllers.production_attendance_type_controller import ProductionAttendanceTypeListView,ProductionAttendanceTypeDetailView, ProductionAttendanceTypeUpdateView,ProductionAttendanceTypeCreateView
 from .RestControllers.computation_info_controller  import ComputationInfoListView,ComputationInfoDetailView,ComputationInfoUpdateView,ComputationInfoCreateView
 from .RestControllers.unit_relation_controller  import UnitRelationListView,UnitRelationDetailView,UnitRelationUpdateView,UnitRelationCreateView
+from .RestControllers.salary_calculation_controller  import SalaryCalculationTestView
+
 
 
 
@@ -79,7 +81,8 @@ urlpatterns = [
     url(r"^unitrelations/$", UnitRelationListView.as_view(), name="unitrelations"),
     url(r'^unitrelations/(?P<pk>\d+)/$', UnitRelationDetailView.as_view(), name="unitrelations"),
     url(r'^unitrelations/create/$', UnitRelationCreateView.as_view(), name="unitrelations_create"),
-    url(r'^unitrelations/(?P<pk>\d+)/edit/$', UnitRelationUpdateView.as_view(), name="unitrelations_update")
+    url(r'^unitrelations/(?P<pk>\d+)/edit/$', UnitRelationUpdateView.as_view(), name="unitrelations_update"),
+    url(r"^calculatesalary/$",SalaryCalculationTestView.as_view({"post":"post"}),name="salarycalculate")
 
 
 
