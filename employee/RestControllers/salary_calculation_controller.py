@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework import renderers
 
 from ..Models.salary_detail import SalaryDetail
-from ..Serializers.salary_detail_serializer import SalaryDetailItemListSerializer
+from ..Serializers.salary_detail_serializer import SalaryDetailListSerializer
 
 
 
@@ -24,6 +24,6 @@ class SalaryCalculationTestView(APIView):
 
         print(employee)
 
-        salary_details=SalaryDetail.objects.all().filter(employee__id=employee)
-        serializer= SalaryDetailItemListSerializer(salary_details,many=True)
+        salary_details=SalaryDetail.objects.all().filter( effective_from__gte = from_date).filter(effective_till_date__lt=till_date).filter(employee__id=employee)
+        serializer= SalaryDetailListSerializer(salary_details,many=True)
         return Response(serializer.data,status=status.HTTP_201_CREATED)
