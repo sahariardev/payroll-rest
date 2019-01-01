@@ -26,4 +26,5 @@ class SalaryCalculationTestView(APIView):
 
         salary_details=SalaryDetail.objects.all().filter( effective_from__gte = from_date).filter(effective_till_date__lt=till_date).filter(employee__id=employee)
         serializer= SalaryDetailListSerializer(salary_details,many=True)
+        print(serializer.data)
         return Response(serializer.data,status=status.HTTP_201_CREATED)
