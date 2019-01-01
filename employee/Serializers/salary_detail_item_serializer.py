@@ -6,7 +6,6 @@ from ..Serializers.unit_serializer import UnitDetailSerializer
 
 
 class SalaryDetailItemListSerializerWithPayHeadDetail(ModelSerializer):
-    salary_detail = StringRelatedField()
     pay_head=PayHeadDetailSerializer()
     unit=UnitDetailSerializer()
     class Meta:
