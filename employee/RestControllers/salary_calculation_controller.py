@@ -17,11 +17,13 @@ class SalaryCalculationTestView(APIView):
            get the data and then save one by one
         '''
         print(request.data)
-        from_date=request.data.from_date
-        till_date=request.data.till_date
-        employee = request.data.employee
+        from_date=request.data.get('from_date')
         print(from_date)
+        till_date=request.data['till_date']
         print(till_date)
+        employee = request.data.employee
+
+
         print(employee)
 
         salary_details=SalaryDetail.objects.all().filter( effective_from__gte = from_date).filter(effective_till_date__lt=till_date).filter(employee__id=employee)
