@@ -25,3 +25,7 @@ class EmployeeCreateUpdateSerializer(ModelSerializer):
         model=Employee
         #set the fields list
         fields=['name','address','date_of_joining','gender','date_of_birth','blood_group','marital_status','address','contact','email','spouse_name','designation','peckage']
+class EmployeeSerializerForOtherModels(ModelSerializer):
+    class Meta:
+        model=Employee
+        fields=['name','id','email']
