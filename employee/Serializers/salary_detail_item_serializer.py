@@ -1,15 +1,17 @@
 from rest_framework.serializers import ModelSerializer,StringRelatedField
 from ..Models.salary_detail_item import SalaryDetailItem
 from ..Serializers.pay_head_serializer import PayHeadDetailSerializer
+from ..Serializers.unit_serializer import UnitDetailSerializer
 
 
 
 class SalaryDetailItemListSerializerWithPayHeadDetail(ModelSerializer):
     salary_detail = StringRelatedField()
     pay_head=PayHeadDetailSerializer()
+    unit=UnitDetailSerializer()
     class Meta:
         model=SalaryDetailItem
-        fields=['id','salary_detail','pay_head']
+        fields=['id','pay_head','priority','value','rate','unit']
 
 class SalaryDetailItemListSerializer(ModelSerializer):
     salary_detail = StringRelatedField()
