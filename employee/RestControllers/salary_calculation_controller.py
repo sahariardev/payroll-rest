@@ -16,6 +16,7 @@ class SalaryCalculationTestView(APIView):
         '''All data are avaialble on request.data
            get the data and then save one by one
         '''
+        print(request.data)
         from_date=request.data.from_date
         till_date=request.data.till_date
         employee = request.data.employee
