@@ -4,7 +4,7 @@ from ..Models.pay_head import  PayHead
 class PayHeadListSerializer(ModelSerializer):
     class Meta:
         model=PayHead
-        fields=['id','name'];
+        fields=['id','name','calculation_type'];
 
 class PayHeadDetailSerializer(ModelSerializer):
     class Meta:
