@@ -24,8 +24,20 @@ class SalaryCalculationTestView(APIView):
 
         print(employee)
 
-        salary_details=SalaryDetail.objects.all().filter( effective_from__gte = from_date).filter(employee__id=employee)
+        salary_details=SalaryDetail.objects.all().filter( effective_from__gte = from_date).filter(effective_till_date__lt=till_date).filter(employee__id=employee)
         #salary_details = SalaryDetail.objects.all().filter(employee__id=employee)
         serializer= SalaryDetailListSerializer(salary_details,many=True)
-        print(serializer.data)
+        salary_detail_items=serializer.data['salary_detail_item']
+
+        for items in salary_detail_items:
+            print("-----------------------")
+            print("-----------------------")
+            print(items)
+            print("-----------------------")
+            print("-----------------------")
+
+
+
+
+
         return Response(serializer.data,status=status.HTTP_201_CREATED)
