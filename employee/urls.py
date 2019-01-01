@@ -82,7 +82,7 @@ urlpatterns = [
     url(r'^unitrelations/(?P<pk>\d+)/$', UnitRelationDetailView.as_view(), name="unitrelations"),
     url(r'^unitrelations/create/$', UnitRelationCreateView.as_view(), name="unitrelations_create"),
     url(r'^unitrelations/(?P<pk>\d+)/edit/$', UnitRelationUpdateView.as_view(), name="unitrelations_update"),
-    url(r"^calculatesalary/$",SalaryCalculationTestView.as_view({"post":"post"}),name="salarycalculate")
+    url(r"^calculatesalary/$",SalaryCalculationTestView.as_view(),name="salarycalculate")
 
 
 
