@@ -44,19 +44,22 @@ class SalaryCalculationTestView(APIView):
                 #find the attendances where date in range and employee and attendance ids are same
 
                 attendance_id=pay_head['attendence_production_type']
-                attendances=Attendance.objects.all().filter(employee__id=employee).filter(production_attendance_type__id=attendance_id)
+                attendances=Attendance.objects.all().filter(employee__id=employee).filter(production_attendance_type__id=attendance_id).filter(date__gte=from_date).filter(date__lte=till_date)
                 attendance_data_serializer=AttendanceSerializerForSalaryCalculation(attendances,many=True)
                 print("--serialized data---")
                 print(attendance_data_serializer.data)
                 sum=0
-                for  v in attendance_data_serializer.data:
-                    sum=sum+v['value']
+                if(len(attendance_data_serializer.data) !=0):
+                    for v in attendance_data_serializer.data:
+                        sum = sum + v['value']
 
-                final_amount=pay_head['value']*sum/pay_head['rate']
-                print("---------------------------------------")
-                print(pay_head['description'])
-                print(dbc)
-                print(final_amount)
-                print("---------------------------------------")
+                    final_amount = pay_head['value'] * sum / pay_head['rate']
+                    print("---------------------------------------")
+                    print(pay_head['description'])
+                    print(dbc)
+                    print(final_amount)
+                    print("---------------------------------------")
+
+
 
         return Response(serializer.data,status=status.HTTP_201_CREATED)
