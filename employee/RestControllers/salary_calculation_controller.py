@@ -47,6 +47,7 @@ class SalaryCalculationTestView(APIView):
                 attendances=Attendance.objects.all().filter(employee__id=employee).filter(production_attendance_type__id=attendance_id).filter(date__gte=from_date).filter(date__lte=till_date)
                 attendance_data_serializer=AttendanceSerializerForSalaryCalculation(attendances,many=True)
                 print("--serialized data---")
+                print(attendance_data_serializer.data)
                 sum=0
                 for  v in attendance_data_serializer.data:
                     sum=sum+v['value']
