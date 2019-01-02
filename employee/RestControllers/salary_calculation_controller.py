@@ -44,7 +44,7 @@ class SalaryCalculationTestView(APIView):
                 #find the attendances where date in range and employee and attendance ids are same
 
                 attendance_id=pay_head['attendence_production_type']
-                attendances=Attendance.objects.all().filter(employee__id=employee).filter(production_attendance_type__id=attendance_id).filter(date__gte=from_date).filter(date__lte=till_date)
+                attendances=Attendance.objects.all().filter(employee__id=employee).filter(production_attendance_type__id=attendance_id)
                 attendance_data_serializer=AttendanceSerializerForSalaryCalculation(attendances,many=True)
                 print("--serialized data---")
                 print(attendance_data_serializer.data)
