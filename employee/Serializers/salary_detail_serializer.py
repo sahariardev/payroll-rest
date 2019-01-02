@@ -8,7 +8,7 @@ class SalaryDetailListSerializer(ModelSerializer):
     salary_detail_item=SerializerMethodField()
 
     def get_salary_detail_item(self,obj):
-        salary_details_items_data=SalaryDetailItem.objects.filter(salary_detail_id=obj.id)
+        salary_details_items_data=SalaryDetailItem.objects.filter(salary_detail_id=obj.id).order_by('-priority')
         d=SalaryDetailItemListSerializerWithPayHeadDetail(salary_details_items_data, many=True)
         return d.data
     class Meta:

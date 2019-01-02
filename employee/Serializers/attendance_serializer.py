@@ -25,3 +25,8 @@ class AttendanceCreateSerializer(ModelSerializer):
         model=Attendance
         fields=['employee','production_attendance_type','value','unit','date'];
 
+
+class AttendanceSerializerForSalaryCalculation(ModelSerializer):
+    class Meta:
+        model=Attendance
+        fields=['value']
