@@ -51,8 +51,12 @@ class SalaryCalculationTestView(APIView):
                 sum=0
                 if(len(attendance_data_serializer.data) !=0):
                     for v in attendance_data_serializer.data:
+                        print(v)
+                        print(v['value'])
                         sum = sum + v['value']
 
+                    print(sum)
+                    print(pay_head)
                     final_amount = pay_head['value'] * sum / pay_head['rate']
                     print("---------------------------------------")
                     print(pay_head['description'])
