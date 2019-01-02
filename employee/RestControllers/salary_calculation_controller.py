@@ -57,7 +57,7 @@ class SalaryCalculationTestView(APIView):
 
                     print(sum)
                     print(pay_head)
-                    final_amount = pay_head['value'] * sum / pay_head['rate']
+                    final_amount = salary_detail_items['value'] * sum / salary_detail_items['rate']
                     print("---------------------------------------")
                     print(pay_head['description'])
                     print(dbc)
