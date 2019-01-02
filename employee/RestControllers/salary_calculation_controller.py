@@ -46,8 +46,8 @@ class SalaryCalculationTestView(APIView):
                 attendance_id=pay_head['attendence_production_type']
                 attendances=Attendance.objects.all().filter(employee__id=employee).filter(production_attendance_type__id=attendance_id).filter(date__gte=from_date).filter(date__lte=till_date)
                 attendance_data_serializer=AttendanceSerializerForSalaryCalculation(attendances,many=True)
-                print("--serialized data---")
-                print(attendance_data_serializer.data)
+
+
                 sum=0
                 if(len(attendance_data_serializer.data) !=0):
                     for v in attendance_data_serializer.data:
@@ -55,12 +55,12 @@ class SalaryCalculationTestView(APIView):
                         print(v['value'])
                         sum = sum + v['value']
 
-                    print(sum)
-                    print(pay_head)
+
+
                     final_amount = salary_detail_item['value'] * sum / salary_detail_item['rate']
                     print("---------------------------------------")
                     print(pay_head['description'])
-                    print(dbc)
+                    print(dbc+" for {a} {b}".format(a=sum,b=salary_detail_item['unit']['name']))
                     print(final_amount)
                     print("---------------------------------------")
 
