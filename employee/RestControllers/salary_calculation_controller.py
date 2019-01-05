@@ -76,6 +76,7 @@ class SalaryCalculationTestView(APIView):
                         'amount':final_amount,
                         'sign':sign
                     }
+                    print(datamap)
 
             elif(pay_head['calculation_type'].lower()=='As Computed Value'.lower()):
                 tokens=pay_head['rule'].split()
