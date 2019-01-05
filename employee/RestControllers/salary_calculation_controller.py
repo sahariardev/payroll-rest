@@ -99,4 +99,25 @@ class SalaryCalculationTestView(APIView):
                     'sign':sign
                 }
         print(datamap)
-        return Response(datamap,status=status.HTTP_201_CREATED)
+
+        all_data_sum=0;
+        for key  in datamap.keys():
+            if(datamap[key]['sign']=='+'):
+                all_data_sum=all_data_sum+datamap[key]['amount']
+            else:
+                all_data_sum = all_data_sum - datamap[key]['amount']
+        info=""
+
+        if(all_data_sum > 0):
+           info="Debited"
+        elif (all_data_sum == 0):
+            info="Not available"
+        else:
+           info="Credited"
+
+        response={
+            'all_info':datamap,
+            'info':info,
+            'final_result':all_data_sum
+        }
+        return Response(response,status=status.HTTP_201_CREATED)
