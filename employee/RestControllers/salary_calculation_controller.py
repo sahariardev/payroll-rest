@@ -70,7 +70,7 @@ class SalaryCalculationTestView(APIView):
                     print(final_amount)
                     print("---------------------------------------")
                     pay_head_id=pay_head['id']
-                    datamap['pay_head_id']={
+                    datamap[pay_head_id]={
                         'description':pay_head['description'],
                         'detail':dbc+" for {a} {b}".format(a=sum,b=salary_detail_item['unit']['name']),
                         'amount':final_amount,
@@ -92,7 +92,7 @@ class SalaryCalculationTestView(APIView):
 
                 final_amount=evaluate_expression.evaluate(tokensforeval)
                 pay_head_id = pay_head['id']
-                datamap['pay_head_id']={
+                datamap[pay_head_id]={
                     'description': pay_head['description'],
                     'detail':dbc,
                     'amount': final_amount,
