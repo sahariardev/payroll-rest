@@ -84,7 +84,7 @@ class SalaryCalculationTestView(APIView):
                 for token in tokens:
                     if(re.search(r"^ID-\d",token)):
                        dependent_pay_head_id=token.split("-")[1]
-                       value=datamap[int(dependent_pay_head_id)].amount
+                       value=datamap[int(dependent_pay_head_id)]['amount']
                        tokensforeval.append(value)
 
                     else:
