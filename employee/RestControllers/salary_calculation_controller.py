@@ -98,8 +98,5 @@ class SalaryCalculationTestView(APIView):
                     'amount': final_amount,
                     'sign':sign
                 }
-
-
-
         print(datamap)
-        return Response(serializer.data,status=status.HTTP_201_CREATED)
+        return Response(datamap,status=status.HTTP_201_CREATED)
